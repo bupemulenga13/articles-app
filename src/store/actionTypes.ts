@@ -1,15 +1,52 @@
 export const ADD_ARTICLE = "ADD_ARTICLE";
-export const DELETE_ARTICLE = "DELETE_ARTICLE";
+export const UPDATE_ARTICLE = "UPDATE_ARTICLE";
 export const FETCH_ARTICLES = "FETCH_ARTICLES";
 export const FETCH_ARTICLE = "FETCH_ARTICLE";
-export const FETCH_ARTICLE_SUCCESS = "FETCH_ARTICLE_SUCCESS";
-export const FETCH_ARTICLE_FAILURE = "FETCH_ARTICLE_FAILURE";
-export const FETCH_ARTICLES_SUCCESS = "FETCH_ARTICLES_SUCCESS";
-export const FETCH_ARTICLES_FAILURE = "FETCH_ARTICLES_FAILURE";
-export const UPDATE_ARTICLE = "UPDATE_ARTICLE";
-export const UPDATE_ARTICLE_SUCCESS = "UPDATE_ARTICLE_SUCCESS";
-export const UPDATE_ARTICLE_FAILURE = "UPDATE_ARTICLE_FAILURE";
-export const DELETE_ARTICLE_SUCCESS = "DELETE_ARTICLE_SUCCESS";
-export const DELETE_ARTICLE_FAILURE = "DELETE_ARTICLE_FAILURE";
-export const ADD_ARTICLE_SUCCESS = "ADD_ARTICLE_SUCCESS";
-export const ADD_ARTICLE_FAILURE = "ADD_ARTICLE_FAILURE";
+export const DELETE_ARTICLE = "DELETE_ARTICLE";
+
+interface GetArticlesAction {
+    type: typeof FETCH_ARTICLES;
+    payload:{
+        articles: IArticle[],
+        articlesLoading: boolean
+    }
+}
+
+
+interface GetArticleAction {
+    type: typeof FETCH_ARTICLE;
+    payload: {
+        article: IArticle
+        articlesLoading: boolean
+    }
+}
+
+
+interface AddArticleAction {
+    type: typeof ADD_ARTICLE;
+    payload: {
+        article: IArticle
+        articlesLoading: boolean
+    }
+}
+
+
+interface UpdateArticleAction {
+    type: typeof UPDATE_ARTICLE;
+    payload: {
+        article: IArticle
+        articlesLoading: boolean
+    }
+}
+
+
+interface DeleteArticleAction {
+    type: typeof DELETE_ARTICLE;
+    payload: {
+        article: IArticle
+        articlesLoading: boolean
+    }
+}
+
+
+export type ArticleActionTypes = GetArticlesAction | GetArticleAction | AddArticleAction | UpdateArticleAction | DeleteArticleAction;
