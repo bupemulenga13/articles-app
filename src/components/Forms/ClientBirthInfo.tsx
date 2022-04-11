@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Grid,
   Card,
@@ -9,55 +8,67 @@ import {
   TextField,
   Container,
 } from "@mui/material";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
 
-  
 export default function ClientBirthInfo() {
   return (
     <Container>
       <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Card>
-                <CardHeader title="Birth Information" />
-                <Divider />
-                    
-                <CardContent>
-                    <Box component="form"
-                  sx={{
-                    '& .MuiTextField-root': { m: 1, width: '25ch' },
-                  }}
-                  noValidate
-                  autoComplete="off">
+        <Grid item xs={12}>
+          <Card>
+            <CardHeader title="Birth Information" />
+            <Divider />
 
-                      <div>
-                          <TextField
-                          required
-                          id="place_of_birth"
-                          label = "Place of Birth"                        
-                          />
-                          <TextField
-                          required
-                          id="district_of_birth"
-                          label="District of Birth"
-                          />
-                          <TextField
-                          required
-                          id="province_of_birth"
-                          label="Province of Birth"
-                          />
-                          <TextField
-                          id="country_of_origin"
-                          label="Country of Origin"
-                          />
-                          <TextField
-                          id="born_in_zambia"
-                          label="Born in Zambia"
-                          />
-                      </div>
-
-                    </Box>
-                </CardContent>
-                </Card>
-          </Grid>
+            <CardContent>
+              <Box
+                component="form"
+                sx={{ flexGrow: 1 }}
+                noValidate
+                autoComplete="off"
+              >
+                <Grid container spacing={2} columns={16}>
+                  <Grid item xs={8}>
+                    <TextField
+                      style={{ width: "90%" }}
+                      id="place_of_birth"
+                      label="Place of Birth"
+                      type="text"
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      style={{ width: "90%" }}
+                      id="district_of_birth"
+                      label="District of Birth"
+                      type="text"
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      style={{ width: "90%" }}
+                      id="province_of_birth"
+                      label="Province of Birth"
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      style={{ width: "90%" }}
+                      id="country_of_origin"
+                      label="Country of Origin"
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <FormControlLabel
+                      control={<Checkbox defaultChecked />}
+                      label="Born in Zambia"
+                    />
+                  </Grid>
+                </Grid>
+              </Box>
+            </CardContent>
+          </Card>
+        </Grid>
       </Grid>
     </Container>
   );

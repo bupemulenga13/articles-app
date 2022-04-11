@@ -10,7 +10,7 @@ function App() {
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <Container>
-          <Box mt={10} sx={{
+          <Box mt={5} mb={5} sx={{
               width: '100%',
               height: '100%',
             }}>

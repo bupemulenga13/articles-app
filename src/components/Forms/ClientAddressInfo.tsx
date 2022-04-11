@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Grid,
   Card,
@@ -8,57 +7,105 @@ import {
   Box,
   TextField,
   Container,
-  MenuItem
+  MenuItem,
 } from "@mui/material";
+import { districts, provinces } from "../../utils/options";
 
-  
-export default function ClientAddress() {
+export default function ClientAddressInfo() {
   return (
-    <Container>
-      <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Card>
-                <CardHeader title="Address Information" />
-                <Divider />
-                    
-                <CardContent>
-                    <Box component="form"
-                  sx={{
-                    '& .MuiTextField-root': { m: 1, width: '25ch' },
-                  }}
-                  noValidate
-                  autoComplete="off">
-
-                      <div>
-                          <TextField
-                          required
-                          id="place_of_birth"
-                          label = "Place of Birth"                        
-                          />
-                          <TextField
-                          required
-                          id="district_of_birth"
-                          label="District of Birth"
-                          />
-                          <TextField
-                          required
-                          id="province_of_birth"
-                          label="Province of Birth"
-                          />
-                          <TextField
-                          id="country_of_origin"
-                          label="Country of Origin"
-                          />
-                          <TextField
-                          id="born_in_zambia"
-                          label="Born in Zambia"
-                          />
-                      </div>
-
-                    </Box>
-                </CardContent>
-                </Card>
-          </Grid>
+    <Container maxWidth="lg">
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="stretch"
+        spacing={3}
+      >
+        <Grid item xs={12}>
+          <Card>
+            <CardHeader title="Address Information" />
+            <Divider />
+            <CardContent>
+              <Box
+                component="form"
+                sx={{ flexGrow: 1 }}
+                noValidate
+                autoComplete="off"
+              >
+                <Grid container spacing={2} columns={16}>
+                  <Grid item xs={8}>
+                    <TextField
+                      style={{ width: "90%" }}
+                      id="house_number"
+                      label="House Name"
+                      type="text"
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      style={{ width: "90%" }}
+                      id="street_name"
+                      label="Street Name"
+                      type="text"
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      id="district_of_birth"
+                      select
+                      label="District of Birth"
+                      style={{ width: "90%" }}
+                    >
+                      {districts.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                          {option.label}
+                        </MenuItem>
+                      ))}
+                    </TextField>
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      id="province_of_birth"
+                      select
+                      label="Province of Birth"
+                      style={{ width: "90%" }}
+                    >
+                      {provinces.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                          {option.label}
+                        </MenuItem>
+                      ))}
+                    </TextField>
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      style={{ width: "90%" }}
+                      id="post_code"
+                      label="Postal Code"
+                      type="text"
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      style={{ width: "90%" }}
+                      id="landmarks"
+                      label="Landmarks"
+                      type="text"
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      style={{ width: "90%" }}
+                      id="address_type"
+                      label="Address Type"
+                      type="text"
+                    />
+                  </Grid>
+                </Grid>
+              </Box>
+            </CardContent>
+          </Card>
+        </Grid>
       </Grid>
     </Container>
   );

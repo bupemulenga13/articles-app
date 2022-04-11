@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Grid,
   Card,
@@ -8,57 +7,92 @@ import {
   Box,
   TextField,
   Container,
-  MenuItem
 } from "@mui/material";
 
-  
-export default function ClientAux() {
+export default function ClientAuxiliaryInfo() {
   return (
-    <Container>
-      <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Card>
-                <CardHeader title="Auxiliary IDs" />
-                <Divider />
-                    
-                <CardContent>
-                    <Box component="form"
-                  sx={{
-                    '& .MuiTextField-root': { m: 1, width: '25ch' },
-                  }}
-                  noValidate
-                  autoComplete="off">
-
-                      <div>
-                          <TextField
-                          required
-                          id="place_of_birth"
-                          label = "Place of Birth"                        
-                          />
-                          <TextField
-                          required
-                          id="district_of_birth"
-                          label="District of Birth"
-                          />
-                          <TextField
-                          required
-                          id="province_of_birth"
-                          label="Province of Birth"
-                          />
-                          <TextField
-                          id="country_of_origin"
-                          label="Country of Origin"
-                          />
-                          <TextField
-                          id="born_in_zambia"
-                          label="Born in Zambia"
-                          />
-                      </div>
-
-                    </Box>
-                </CardContent>
-                </Card>
-          </Grid>
+    <Container maxWidth="lg">
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="stretch"
+        spacing={3}
+      >
+        <Grid item xs={12}>
+          <Card>
+            <CardHeader title="Auxiliary Information" />
+            <Divider />
+            <CardContent>
+              <Box
+                component="form"
+                sx={{ flexGrow: 1 }}
+                noValidate
+                autoComplete="off"
+              >
+                <Grid container spacing={2} columns={16}>
+                  <Grid item xs={8}>
+                    <TextField
+                      style={{ width: "90%" }}
+                      id="nupin"
+                      label="NUPN"
+                      type="text"
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      style={{ width: "90%" }}
+                      required
+                      id="nrc"
+                      label="NRC"
+                      type="text"
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      id="passport"
+                      select
+                      label="Passport No."
+                      style={{ width: "90%" }}
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      id="drivers_license"
+                      select
+                      label="Drivers Licence No."
+                      style={{ width: "90%" }}
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      style={{ width: "90%" }}
+                      id="art_number"
+                      label="ART No."
+                      type="text"
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      style={{ width: "90%" }}
+                      id="nhima_number"
+                      label="NHIMA No."
+                      type="text"
+                    />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <TextField
+                      style={{ width: "90%" }}
+                      id="safe_motherhood_number"
+                      label="Safe Motherhood No."
+                      type="text"
+                    />
+                  </Grid>
+                </Grid>
+              </Box>
+            </CardContent>
+          </Card>
+        </Grid>
       </Grid>
     </Container>
   );
