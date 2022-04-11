@@ -1,18 +1,18 @@
-interface IArticle{
+export interface IArticle{
     id: number
     title: string
     body: string
 }
 
-type ArticleState={
+export type IArticleState={
     articles: IArticle[]
     articlesLoading: boolean
 }
 
-type ArticleAction = {
+export type ArticleAction = {
     type: string
     article: IArticle
 }
 
 
-type DispatchType = (args: ArticleAction) => ArticleAction
+export type DispatchType = (args: ArticleAction) => ArticleAction

@@ -1,6 +1,6 @@
 import {ADD_ARTICLE, FETCH_ARTICLES, UPDATE_ARTICLE, DELETE_ARTICLE} from './actionTypes';
 import { ArticleActionTypes } from './actionTypes';
-import { IArticleState } from './interfaces/article.interface';
+import { IArticleState } from './interfaces/articles.interface';
 
 const initialState: IArticleState = {
     articles: [],
